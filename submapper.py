@@ -16,8 +16,8 @@ def banner():
     
     print(Fore.RED+"Press CTRL'C OR 'sair' TO EXIT\n")
     print(Fore.YELLOW+"Author:", Fore.WHITE+"DarkZer0")
-    print(Fore.YELLOW+"Github:", Fore.WHITE+"github.com/DarkZer0")
-    print(Fore.YELLOW+"Source:", Fore.WHITE+"github.com/DarkZer0/SubMapper\n")
+    print(Fore.YELLOW+"Github:", Fore.WHITE+"https://github.com/DarkZer0")
+    print(Fore.YELLOW+"Source:", Fore.WHITE+"https://github.com/DarkZer0/SubMapper\n")
     
 banner()
 
