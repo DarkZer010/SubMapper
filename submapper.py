@@ -1,11 +1,12 @@
 import requests
 from colorama import init, Fore
 import os
+from datetime import datetime
 
 from threading import Thread
 import pyfiglet
 import sys 
-from time import sleep
+import time
 
 init()
 
@@ -18,21 +19,25 @@ def banner():
     print(Fore.YELLOW+"Author:", Fore.WHITE+"DarkZer0")
     print(Fore.YELLOW+"Github:", Fore.WHITE+"https://github.com/DarkZer0")
     print(Fore.YELLOW+"Source:", Fore.WHITE+"https://github.com/DarkZer0/SubMapper\n")
+    time.sleep(1)
     
 banner()
 
 def submapper():
     try:
-        subdominios = ["blog", "loja", "admin", "suporte", "dev", "pt", "en", "info", "music", "es", "help", "js", "login", "business", "docs", "support", "news", "media", "shop", "checkout", "staging", "test", "projeto", "project", "fr", "api", "app", "forum", "community"]
+        subdominios = ["blog", "loja", "admin", "suporte", "dev", "pt", "en", "info", "music", "es", "help", "js", "login", "business", "docs", "support", "news", "media", "shop", "checkout", "staging", "test", "projeto", "project", "fr", "api", "app", "forum", "community", "dashboard", "panel"]
         
         url_base = input(Fore.BLUE+"Digite a URL: ")
         
         if url_base == "sair":
             print(Fore.RED+"você saiu")
+            time.sleep(2)
             exit()
             
         print("\n")
         
+        tempo_comeco = time.time()
+
         for subdom in subdominios:
             url = f"http://{subdom}.{url_base}"
         
@@ -44,12 +49,23 @@ def submapper():
             
             except requests.exceptions.RequestException as e:
                 print(Fore.RED+f"erro ao acessar: {url}")
+
     
     except Exception as e:
         print(Fore.RED+f"erro: {e}")
-        sleep(2)
+        time.sleep(2)
         exit()
-                
+        
+    print(Fore.CYAN+"data:", datetime.now())
+
+    tempo_fim = time.time()
+    
+    total_tempo = int(tempo_fim -tempo_comeco)
+    h, remainder = divmod(total_tempo, 3600)
+    m, s = divmod(remainder, 60)
+
+    print(Fore.CYAN+f"tempo de execução: {h}h {m}m {s}s\n")
+
 if __name__=="__main__":
-    Thread(target=submapper).start()
+    Thread(target=submapper).start() 
     
