@@ -27,7 +27,7 @@ def submapper():
     try:
         subdominios = ["blog", "loja", "admin", "suporte", "dev", "pt", "en", "info", "music", "es", "help", "js", "login", "business", "docs", "support", "news", "media", "shop", "checkout", "staging", "test", "projeto", "project", "fr", "api", "app", "forum", "community", "dashboard", "panel"]
         
-        url_base = input(Fore.BLUE+"Digite a URL: ")
+        url_base = input(Fore.BLUE+"Digite a url (sem https/http): ")
         
         if url_base == "sair":
             print(Fore.RED+"você saiu")
